@@ -1,33 +1,59 @@
-[![Latest Release](https://img.shields.io/github/release/sfc-sdp/GameCanvas-Unity.svg)](https://github.com/sfc-sdp/GameCanvas-Unity/releases/latest)　[![GameCanvas API v6.0](https://img.shields.io/badge/GameCanvas%20API-v6.0-yellow.svg)](https://sfc-sdp.github.io/GameCanvas-Unity/)
-[<img alt="GameCanvas" align="right" src="Assets/GameCanvas/Icons/icon_android_full.png"/>](https://github.com/sfc-sdp/GameCanvas-Unity/releases/latest)
+## 「棒人間育成ゲーム」
 
-## GameCanvas にようこそ！
+想定している端末の機種名：特になし。今回はapkファイルなので特定の端末に合わせる必要がないと感じ、無難な比率である9：16にした。
+縦横の解像度：720・1280
 
-**GameCanvas for Unity** は、慶應義塾大学『スマートデバイスプログラミング』にて  
-教材として使われている 2Dゲームフレームワーク です。
+ゲーム内容：
+行動を選択し、棒人間を育成するゲーム。
+期間は3日間で、1日3回行動が可能。合計9回の行動で育成先が決定する。
+また、好感度が存在しており特定の行動の順番によって上昇する。好感度によって育成先が変わる場合もある。
+育成先は全部で9種類。図鑑のコンプリートを目指す。
 
-プログラミング初心者でも、スマートデバイス向けアプリケーションを楽しく開発できる環境を目指して開発されました。
+---------------------------------
 
-## 導入方法
-1. [UnityHub](https://unity3d.com/jp/get-unity/download)を入手し、Unity 2022.3.10f1, Androidプラグイン, iOSプラグイン, 日本語言語パックを選択してインストールします  
-※ 推奨バージョンは Unity 2022.3.10f1 です。9GB以上の空き容量が必要です  
-※ インストール方法が分からない方は[こちらの記事](https://creive.me/archives/13376/)も参考にしてください
+以下攻略(ネタバレ
 
-2. [最新の GameCanvas](https://github.com/sfc-sdp/GameCanvas-Unity/releases/latest) からソースコードを入手・解凍します。UnityHubの「リストに追加」から解凍したフォルダを選択すると、プロジェクトが登録されます
+・好感度を上げるコマンド
+勉強→なでる(+１)
+筋トレ→なでる(+１)
+ビンタ→なでる→ビンタ(隠しコマンド/好感度MAX)
+※ビンタ好感度-1
 
-3. プロジェクトを開き、エディターが立ち上がったらプレビューボタン(▶️)を押します。サンプルが実行されれば導入完了です
+・育成キャラ条件
+※好感度がMAXになるとお茶・遊びコマンドが出現する
 
-4. [Assets/Game.cs](Assets/Game.cs) を編集して、自分だけのオリジナルアプリを作りましょう！
+１ニート：勉強1以下・筋トレ1以下・好感度1以下
+２研究者：勉強6以上・なでる1以上
+３マッチョ：筋トレ8以上
+４ヒットマン：勉強2以上・筋トレ5以上・好感度0
+５遊び人：勉強1以下・筋トレ3以上・遊び1以上
+６マダム：勉強2以上・筋トレ2以上・お茶1以上・好感度3
+７勇者：勉強3・筋トレ3・なでる3・好感度2以上
+８美少女：お茶6・好感度3(隠しコマンドを使わないと出ない)
+９一般人：上記以外
 
-iOS や Android への書き出しなど、より詳しい解説は、[スマートデバイスプログラミング 講義テキスト](https://github.com/sfc-sdp/SDP-Textbook) を参照してください
+※図鑑をコンプリートしても派手なエンディングはありません。
+　トロフィーが表示されるだけです。
+---------------------------------
 
-## API ドキュメント
-最新の仕様は [GameCanvas for Unity API ドキュメント](https://sfc-sdp.github.io/GameCanvas-Unity/) で確認できます
+使用したgamecanvasのバージョン：5.0.12
 
-## 質問・バグ報告
-GameCanvasに対する質問や提案、バグ報告は [![Issues](https://img.shields.io/github/issues/sfc-sdp/GameCanvas-Unity.svg)](https://github.com/sfc-sdp/GameCanvas-Unity/issues) で受け付けています
 
-## ライセンス
-Copyright (c) 2015-2023 Smart Device Programming.
+工夫した点：
+行動を選択した時に棒人間が動くようにしたところ。
+ただ育成先が決定するだけでなく、図鑑を作り後で見返せるようにしたところ。
+また、少し難しいコマンドをつくり隠しキャラ的なものを実装したところ。
 
-This software is released under the MIT License, see [LICENSE](LICENSE).
+苦労したところ：
+アニメーションの実装
+育成先判定のバグの解決
+美少女のイラスト
+
+PRポイント：
+隠しキャラである、美少女を描くのが棒人間×100くらい大変だったのでぜひ見てほしいです。
+図鑑の説明も地味に見どころ？です。
+
+備考：
+SEで使用　
+無料効果音で遊ぼう！
+https://taira-komori.jpn.org/freesound.html
